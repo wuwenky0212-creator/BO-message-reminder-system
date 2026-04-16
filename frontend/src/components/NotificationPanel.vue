@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
-import axios from 'axios'
+import apiClient from '../api/axios'
 import { Bell, Setting, WarningFilled } from '@element-plus/icons-vue'
 
 interface NotificationItem {
@@ -107,7 +107,7 @@ const currentNotifications = computed(() => {
 const fetchNotifications = async () => {
   try {
     isLoading.value = true
-    const response = await axios.get('/api/v1/notifications/summary')
+    const response = await apiClient.get('/api/v1/notifications/summary')
     if (response.data.code === 0) {
       notifications.value = response.data.data
     }

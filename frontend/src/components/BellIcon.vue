@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { io, Socket } from 'socket.io-client'
-import axios from 'axios'
+import apiClient from '../api/axios'
 import { Bell } from '@element-plus/icons-vue'
 
 interface BellIconProps {
@@ -44,7 +44,7 @@ let pollingTimer: ReturnType<typeof setInterval> | null = null
 const fetchNotifications = async () => {
   try {
     isLoading.value = true
-    const response = await axios.get('/api/v1/notifications/summary')
+    const response = await apiClient.get('/api/v1/notifications/summary')
     if (response.data.code === 0) {
       totalUnread.value = response.data.data.totalUnread
     }
