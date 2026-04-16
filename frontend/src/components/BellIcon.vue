@@ -62,7 +62,12 @@ const connectWebSocket = () => {
   }
 
   try {
-    socket = io('ws://localhost:8000', {
+    // Use environment variable for WebSocket URL
+    const wsUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+    const wsProtocol = wsUrl.startsWith('https') ? 'wss' : 'ws'
+    const wsHost = wsUrl.replace(/^https?:\/\//, '')
+    
+    socket = io(`${wsProtocol}://${wsHost}`, {
       transports: ['websocket'],
       reconnection: true,
       reconnectionDelay: 1000,
