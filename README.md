@@ -2,6 +2,8 @@
 
 一个基于 Vue 3 + FastAPI 的金融系统消息提醒平台。
 
+🚀 **在线演示**：https://bo-message-reminder-system-h2wuyih8.vercel.app
+
 ## 🌟 功能特性
 
 - ✅ 实时消息提醒（6种异常类型）
