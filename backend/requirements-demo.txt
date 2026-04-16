@@ -1,0 +1,24 @@
+# Demo dependencies (without PostgreSQL)
+
+# Core framework
+fastapi==0.100.0
+uvicorn[standard]==0.23.0
+
+# Database (SQLite - no additional driver needed)
+sqlalchemy==2.0.19
+
+# Testing
+pytest==7.4.0
+pytest-cov==4.1.0
+pytest-asyncio==0.21.1
+
+# Utilities
+python-dotenv==1.0.0
+pydantic==2.1.1
+
+# JWT Authentication
+pyjwt==2.8.0
+cryptography==41.0.3
+
+# Redis Cache
+redis==5.0.0
