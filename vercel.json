@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "https://your-render-backend-url.onrender.com/api/$1"
+      "dest": "https://message-reminder-api.onrender.com/api/$1"
     },
     {
       "src": "/(.*)",
@@ -22,7 +22,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://your-render-backend-url.onrender.com/api/:path*"
+      "destination": "https://message-reminder-api.onrender.com/api/:path*"
     }
   ]
 }
